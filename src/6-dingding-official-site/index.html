@@ -1,67 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>钉钉官网动效</title>
-    <link rel="stylesheet/less" type="text/css" href="./styles.less" />
-    <script src="../lib/less.min.js"></script>
-    <script src="../lib/vue.global.js"></script>
-  </head>
-  <body>
-    <div id="app">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>钉钉官网动效</title>
+  <link rel="stylesheet/less" type="text/css" href="./styles.less" />
+  <script src="../lib/less.min.js"></script>
+  <script src="../lib/vue.global.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div class="banner">
+    </div>
+    <div class="container">
       <div class="main">
-        <p style="color:white;font-size:12px;">{{squareList}}</p>
-        <div
-          class="square"
-          v-for="(item,index) in squareList"
-          :class="`square-${index}`"
-          :key="item.no"
-          :style="getSquareStyle(item)"
-        ></div>
+
+        <ul class="block-group">
+          <li class="block"></li>
+          <li class="block"></li>
+          <li class="block"></li>
+          <li class="block"></li>
+          <li class="block"></li>
+          <li class="block"></li>
+          <li class="block"></li>
+          <li class="block"></li>
+          <li class="block"></li>
+          <li class="block"></li>
+          <li class="block"></li>
+          <li class="block"></li>
+        </ul>
+
       </div>
     </div>
-    <script>
-      const { createApp } = Vue;
-      createApp({
-        data() {
-          return {
-            message: "Hello Vue!",
-            squareNum: 30,
-            squareList: [],
-          };
-        },
-        mounted() {
-            this.squareList = new Array(30).fill(1)
-        //   this.squareList = new Array(30).fill(1).map((item, index) => {
-        //     let red = this.getRandomColor();
-        //     let green = this.getRandomColor();
-        //     let blue = this.getRandomColor();
-        //     return {
-        //       no: item + 1, // 1 - 30
-        //       color: `rgb(${red},${green},${blue})`,
-        //       width: Math.floor(25 + Math.random() * 55),
-        //       top: Math.floor(0 + Math.random() * 1000),
-        //       bottom: Math.floor(0 + Math.random() * 1000),
-        //     };
-        //   });
-        },
-        methods: {
-          getRandomColor() {
-            return Math.floor(Math.random() * 255);
-          },
-          getSquareStyle(item) {
-            return `
-            background-color:${item.color};
-            width:${item.width}px;
-            height:${item.width}px;
-            top: ${item.top}px;
-            left: ${item.bottom}px;
-            `    
-          }
-        },
-      }).mount("#app");
-    </script>
-  </body>
+    <div class="container">
+      footer
+    </div>
+  </div>
+  <script>
+  </script>
+</body>
+
 </html>
